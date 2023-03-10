@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306/music_finally?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    druid:
+      filter:
+        stat:
+          enabled: true
+          db-type: h2
+          log-slow-sql: true
+          slow-sql-millis: 2000
+wechat:
+  open-app-id: wx6ad144e54af67d87
+  open-app-secret: 91a2ff6d38a2bbccfb7e9f9079108e2e
+
+
+#logging:
+#  config: classpath:logback.xml
+#  level:
+#    root: INFO
+#  file:
+#    path: ./logs

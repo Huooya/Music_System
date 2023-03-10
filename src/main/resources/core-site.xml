@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xm1-stylesheet type="text/xsl" href="configuration.xs1"?>
+<configuration>
+    <property>
+        <name>fs.trash.interval</name>
+        <value>1</value>
+    </property>
+
+    <property>
+        <name>fs.trash.checkpoint.interval</name>
+        <value>1</value>
+    </property>
+</configuration>
