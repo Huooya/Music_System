@@ -1,13 +1,16 @@
 package com.zjr.music.controller;
 
+import com.zjr.music.service.MemberService;
 import com.zjr.music.utils.JwtUtil;
 import com.zjr.music.utils.Result;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
@@ -16,6 +19,9 @@ import java.util.UUID;
 @Api(value = "登录接口")
 @RequestMapping("/auth")
 public class LoginController {
+
+    @Autowired
+    public MemberService memberService;
 
     @GetMapping("/login")
     @ApiOperation(value="账号密码登录接口", notes="用户登录")
@@ -32,5 +38,10 @@ public class LoginController {
         String token = JwtUtil.sign(userId, info);
 
         return Result.success("token:" + token);
+    }
+
+    @GetMapping("/wxlogin")
+    public String WxLogin(HttpSession session) throws Exception {
+        return memberService.getQrCode();
     }
 }
