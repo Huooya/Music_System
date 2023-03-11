@@ -3,6 +3,7 @@ package com.zjr.music.service;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.zjr.music.entity.Singer;
+import com.zjr.music.entity.User;
 import com.zjr.music.mapper.SingerMapper;
 import com.zjr.music.utils.Result;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -71,13 +72,34 @@ public class SingerService {
     }
 
     /**
-     * 新增歌手
+     * 歌手入驻
      * @param singer 歌手对象
      * @return success
      */
     public Result insertSinger(Singer singer){
         singerMapper.insertSinger(singer);
         return Result.success();
+    }
+
+    /**
+     * 申请音乐人/歌手认证
+     * @param user 歌手对象
+     * @return success
+     */
+    public Result newSingerInfo(User user){
+        //将用户已有信息同步至歌手表
+        Singer singer = new Singer();
+        singer.setArea(user.getArea());
+        singer.setAttention(user.getAttention());
+        singer.setAvatar(user.getAvatar());
+        //1为已认证状态，0为未认证状态
+        singer.setDynamic_state(1);
+        singer.setFan(user.getFan());
+        singer.setName(user.getUsername());
+        singer.setSex(user.getSex());
+        singerMapper.newSingerInfo(singer);
+        return Result.success();
+
     }
 
 
