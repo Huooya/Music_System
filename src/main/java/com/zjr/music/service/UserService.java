@@ -42,4 +42,15 @@ public class UserService {
         return Result.success();
     }
 
+    /**
+     * 取消关注
+     * @param userid 用户id
+     * @param attentionid 被取消关注用户id
+     * @return success
+     */
+    public Result deleteAttention(Integer userid, Integer attentionid){
+        userMapper.deleteAttention(userid, attentionid);
+        return Result.success();
+    }
+
 }

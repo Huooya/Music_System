@@ -14,4 +14,8 @@
         insert into attention (userid, attentionid) value (#{userid}, #{attentionid})
     </insert>
 
+    <delete id="deleteAttention" parameterType="Integer">
+        delete from attention where userid = #{userid} and attentionid = #{attentionid}
+    </delete>
+
 </mapper>

@@ -33,4 +33,10 @@ public class UserController {
     public Result addAttention(@ApiParam(value = "用户id") Integer userid, @ApiParam(value = "被关注用户id") Integer attentionid){
         return userService.addAttention(userid, attentionid);
     }
+
+    @PostMapping("/deleteAttention")
+    @ApiOperation(value = "取消关注用户")
+    public Result deleteAttention(@ApiParam(value = "用户id") Integer userid, @ApiParam(value = "被关注用户id") Integer attentionid){
+        return userService.deleteAttention(userid, attentionid);
+    }
 }

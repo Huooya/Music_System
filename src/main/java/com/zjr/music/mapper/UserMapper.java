@@ -12,4 +12,5 @@ public interface UserMapper {
     List<Integer> attentionIdList(Integer userid);
     User getUserInfo(Integer userid);
     void insertAttention(Integer userid, Integer attentionid);
+    void deleteAttention(Integer userid, Integer attentionid);
 }
