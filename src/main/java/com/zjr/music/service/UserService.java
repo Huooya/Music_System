@@ -1,6 +1,7 @@
 package com.zjr.music.service;
 
 import com.zjr.music.entity.User;
+import com.zjr.music.mapper.SingerMapper;
 import com.zjr.music.mapper.UserMapper;
 import com.zjr.music.utils.Result;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,9 @@ import java.util.List;
 public class UserService {
     @Autowired
     private UserMapper userMapper;
+
+    @Autowired
+    private SingerMapper singerMapper;
 
     /**
      * 获取用户关注列表
@@ -38,7 +42,24 @@ public class UserService {
      * @return success
      */
     public Result addAttention(Integer userid, Integer attentionid){
+        //更新attention表
         userMapper.insertAttention(userid, attentionid);
+        //查询被关注用户信息
+        User user = userMapper.getUserInfo(attentionid);
+        //如果是音乐人/歌手同步更新singer表
+        try{
+            if (user.getDynamic_state() == 1){
+                //是音乐人直接更新
+                singerMapper.updateSingerManAttention(attentionid);
+            }
+            else {
+                //是用户关注用户直接更新
+                userMapper.updateUserAttention(attentionid);
+            }
+        }catch (Exception e){
+            singerMapper.updateSingerAttention(attentionid);
+        }
+
         return Result.success();
     }
 

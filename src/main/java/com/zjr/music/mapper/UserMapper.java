@@ -13,4 +13,5 @@ public interface UserMapper {
     User getUserInfo(Integer userid);
     void insertAttention(Integer userid, Integer attentionid);
     void deleteAttention(Integer userid, Integer attentionid);
+    void updateUserAttention(Integer attentionid);
 }

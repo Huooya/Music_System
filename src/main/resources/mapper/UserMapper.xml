@@ -18,4 +18,8 @@
         delete from attention where userid = #{userid} and attentionid = #{attentionid}
     </delete>
 
+    <update id="updateUserAttention"  parameterType="Integer">
+        update user set attention=attention+1 where id=#{attentionid}
+    </update>
+
 </mapper>

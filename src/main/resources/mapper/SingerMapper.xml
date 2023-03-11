@@ -55,5 +55,13 @@
         insert into singer (name, sex, introduction, area, dynamic_state, attention, fan, avatar) value (#{name}, #{sex}, #{introduction}, #{area}, #{dynamic_state}, #{attention}, #{fan}, #{avatar})
     </insert>
 
+    <update id="updateSingerManAttention"  parameterType="Integer">
+        update singer set attention=attention+1 where userid=#{attentionid}
+    </update>
+
+    <update id="updateSingerAttention"  parameterType="Integer">
+        update singer set fan=fan+1 where userid=#{attentionid}
+    </update>
+
 
 </mapper>

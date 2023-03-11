@@ -9,6 +9,7 @@ public class Singer {
     private Integer attention;
     private Integer fan;
     private String avatar;
+    private String music_man;
     private Integer id;
 
     public String getName() {
@@ -81,5 +82,13 @@ public class Singer {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getMusic_man() {
+        return music_man;
+    }
+
+    public void setMusic_man(String music_man) {
+        this.music_man = music_man;
     }
 }
