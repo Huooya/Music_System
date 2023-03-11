@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--xmlns="http://mybatis.org/schema/mybatis-mapper"-->
+<mapper namespace="com.zjr.music.mapper.UserMapper">
+    <select id="attentionIdList" resultType="Integer">
+        select attentionid from attention where userid = #{userid}
+    </select>
+    <select id="getUserInfo" resultType="com.zjr.music.entity.User">
+        select * from user where id = #{userid}
+    </select>
+
+</mapper>
