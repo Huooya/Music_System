@@ -11,6 +11,7 @@ public class Singer {
     private String avatar;
     private String music_man;
     private Integer id;
+    private Long userid;
 
     public String getName() {
         return name;
@@ -90,5 +91,13 @@ public class Singer {
 
     public void setMusic_man(String music_man) {
         this.music_man = music_man;
+    }
+
+    public Long getUserid() {
+        return userid;
+    }
+
+    public void setUserid(Long userid) {
+        this.userid = userid;
     }
 }

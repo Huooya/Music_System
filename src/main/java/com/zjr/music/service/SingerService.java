@@ -2,6 +2,8 @@ package com.zjr.music.service;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.zjr.music.config.SnowflakeIdWorker;
+import com.zjr.music.entity.Code;
 import com.zjr.music.entity.Singer;
 import com.zjr.music.entity.User;
 import com.zjr.music.mapper.SingerMapper;
@@ -10,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -77,6 +80,22 @@ public class SingerService {
      * @return success
      */
     public Result insertSinger(Singer singer){
+//        批量生成
+//        if(num == null){
+//            num = 1L; // 默认生成一个Num;
+//        }
+//        List<Code> codeEntities = new ArrayList<>();
+//        SnowflakeIdWorker idWorker = new SnowflakeIdWorker(0, 0);
+//        for (int i = 0; i < num; i++) {
+//            long id = idWorker.nextId();
+//            Code codeEntity = new Code();
+//            codeEntity.setCodeId(String.valueOf(id));
+//            System.out.println(codeEntity);
+//            codeEntities.add(codeEntity);
+//        }
+        SnowflakeIdWorker idWorker = new SnowflakeIdWorker(0, 0);
+        long id = idWorker.nextId();
+        singer.setUserid(id);
         singerMapper.insertSinger(singer);
         return Result.success();
     }

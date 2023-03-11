@@ -1,5 +1,7 @@
 package com.zjr.music.controller;
 
+import com.zjr.music.config.SnowflakeIdWorker;
+import com.zjr.music.entity.Code;
 import com.zjr.music.entity.Singer;
 import com.zjr.music.entity.User;
 import com.zjr.music.service.SingerService;
@@ -9,6 +11,9 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @RestController
 @Api(value = "歌手接口")
