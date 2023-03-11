@@ -1,6 +1,7 @@
 package com.zjr.music.controller;
 
 import com.zjr.music.entity.Singer;
+import com.zjr.music.entity.User;
 import com.zjr.music.service.SingerService;
 import com.zjr.music.utils.Result;
 import io.swagger.annotations.Api;
@@ -51,6 +52,12 @@ public class SingerController {
     @ApiOperation(value = "新增歌手")
     public Result insertSinger(@ApiParam(value = "歌手对象") @RequestBody Singer singer){
         return singerService.insertSinger(singer);
+    }
+
+    @PutMapping("/newSingerInfo")
+    @ApiOperation(value = "申请歌手/音乐人认证")
+    public Result newSingerInfo(@ApiParam(value = "用户对象") @RequestBody User user){
+        return singerService.newSingerInfo(user);
     }
 
 
