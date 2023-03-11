@@ -27,4 +27,10 @@ public class UserController {
     public Result getAttentionList(@ApiParam(value = "用户id") Integer userid){
         return userService.getAttentionIdList(userid);
     }
+
+    @PostMapping("/addAttention")
+    @ApiOperation(value = "关注用户")
+    public Result addAttention(@ApiParam(value = "用户id") Integer userid, @ApiParam(value = "被关注用户id") Integer attentionid){
+        return userService.addAttention(userid, attentionid);
+    }
 }

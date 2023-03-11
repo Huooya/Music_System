@@ -31,4 +31,15 @@ public class UserService {
         return Result.success(attentionListUser);
     }
 
+    /**
+     * 关注用户/歌手
+     * @param userid 用户id
+     * @param attentionid 被关注用户id
+     * @return success
+     */
+    public Result addAttention(Integer userid, Integer attentionid){
+        userMapper.insertAttention(userid, attentionid);
+        return Result.success();
+    }
+
 }

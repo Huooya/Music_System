@@ -10,4 +10,8 @@
         select * from user where id = #{userid}
     </select>
 
+    <insert id="insertAttention" parameterType="Integer">
+        insert into attention (userid, attentionid) value (#{userid}, #{attentionid})
+    </insert>
+
 </mapper>
