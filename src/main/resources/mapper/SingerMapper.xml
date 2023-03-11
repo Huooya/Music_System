@@ -55,33 +55,5 @@
         insert into singer (name, sex, introduction, area, dynamic_state, attention, fan, avatar) value (#{name}, #{sex}, #{introduction}, #{area}, #{dynamic_state}, #{attention}, #{fan}, #{avatar})
     </insert>
 
-    <insert id="newSingerInfo"  parameterType="com.zjr.music.entity.Singer">
-        insert into singer
-            <if test="name != null and name.trim() != ''">
-                `name` = #{name},
-            </if>
-            <if test="sex != null and sex.trim() != ''">
-                `sex` = #{sex},
-            </if>
-            <if test="introduction != null and introduction.trim() != ''">
-                `introduction` = #{introduction},
-            </if>
-            <if test="area != null and area.trim() != ''">
-                `area` = #{area},
-            </if>
-            <if test="dynamic_state != null">
-                `dynamic_state` = #{dynamic_state},
-            </if>
-            <if test="attention != null">
-                `attention` = #{attention},
-            </if>
-            <if test="fan != null">
-                `fan` = #{fan},
-            </if>
-            <if test="avatar != null and avatar.trim() != ''">
-                `avatar` = #{avatar}
-            </if>
-    </insert>
-
 
 </mapper>

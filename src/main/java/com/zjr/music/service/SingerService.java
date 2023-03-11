@@ -97,7 +97,8 @@ public class SingerService {
         singer.setFan(user.getFan());
         singer.setName(user.getUsername());
         singer.setSex(user.getSex());
-        singerMapper.newSingerInfo(singer);
+        singer.setIntroduction(user.getIntroduction());
+        singerMapper.insertSinger(singer);
         return Result.success();
 
     }
