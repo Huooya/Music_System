@@ -14,4 +14,5 @@ public interface SingerMapper {
     List<Singer> getSingerFansRank();
     List<Singer> getAreaSingerMan(String area, String sex);
     void updateSingerInfo(Singer singer);
+    void insertSinger(Singer singer);
 }

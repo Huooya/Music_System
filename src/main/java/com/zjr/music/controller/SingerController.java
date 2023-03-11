@@ -47,6 +47,12 @@ public class SingerController {
         return singerService.updateSingerInfo(singer);
     }
 
+    @PutMapping("/insertSinger")
+    @ApiOperation(value = "新增歌手")
+    public Result insertSinger(@ApiParam(value = "歌手对象") @RequestBody Singer singer){
+        return singerService.insertSinger(singer);
+    }
+
 
 
 }

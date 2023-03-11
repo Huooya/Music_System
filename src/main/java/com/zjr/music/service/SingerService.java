@@ -70,6 +70,16 @@ public class SingerService {
         return Result.success();
     }
 
+    /**
+     * 新增歌手
+     * @param singer 歌手对象
+     * @return success
+     */
+    public Result insertSinger(Singer singer){
+        singerMapper.insertSinger(singer);
+        return Result.success();
+    }
+
 
 
 

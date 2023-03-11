@@ -52,7 +52,7 @@
     </update>
 
     <insert id="insertSinger" parameterType="com.zjr.music.entity.Singer">
-        insert into singer
+        insert into singer (name, sex, introduction, area, dynamic_state, attention, fan, avatar) value (#{name}, #{sex}, #{introduction}, #{area}, #{dynamic_state}, #{attention}, #{fan}, #{avatar})
     </insert>
 
 
