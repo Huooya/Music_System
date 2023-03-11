@@ -10,5 +10,8 @@ import java.util.List;
 @Repository
 public interface SingerMapper {
     List<Singer> getAllSingerList();
-
+    Singer getSingleSinger(String singerName);
+    List<Singer> getSingerFansRank();
+    List<Singer> getAreaSingerMan(String area, String sex);
+    void updateSingerInfo(Singer singer);
 }

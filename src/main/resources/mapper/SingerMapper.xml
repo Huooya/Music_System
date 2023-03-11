@@ -6,4 +6,54 @@
     <select id="expansion" resultType="com.zjr.music.entity.Singer">
         select * from singer
     </select>
+
+    <select id="getSingleSinger" parameterType="String" resultType="com.zjr.music.entity.Singer">
+        select * from singer where name = #{singerName}
+    </select>
+
+    <select id="getSingerFansRank" parameterType="String" resultType="com.zjr.music.entity.Singer">
+        select name, avatar, fan from singer order by fan desc
+    </select>
+
+    <select id="getAreaSingerMan" parameterType="String" resultType="com.zjr.music.entity.Singer">
+        select name, avatar, area, sex from singer where area = #{area} and sex = #{sex}
+    </select>
+
+    <!-- 更新信息 方式一 -->
+    <update id="updateSingerInfo"  parameterType="com.zjr.music.entity.Singer">
+        update singer
+            <set>
+                <if test="name != null and name.trim() != ''">
+                    `name` = #{name},
+                </if>
+                <if test="sex != null and sex.trim() != ''">
+                    `sex` = #{sex},
+                </if>
+                <if test="introduction != null and introduction.trim() != ''">
+                    `introduction` = #{introduction},
+                </if>
+                <if test="area != null and area.trim() != ''">
+                    `area` = #{area},
+                </if>
+                <if test="dynamic_state != null">
+                    `dynamic_state` = #{dynamic_state},
+                </if>
+                <if test="attention != null">
+                    `attention` = #{attention},
+                </if>
+                <if test="fan != null">
+                    `fan` = #{fan},
+                </if>
+                <if test="avatar != null and avatar.trim() != ''">
+                    `avatar` = #{avatar}
+                </if>
+            </set>
+            where `id` = #{id}
+    </update>
+
+    <insert id="insertSinger" parameterType="com.zjr.music.entity.Singer">
+        insert into singer
+    </insert>
+
+
 </mapper>

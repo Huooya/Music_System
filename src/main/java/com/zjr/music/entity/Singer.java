@@ -3,12 +3,13 @@ package com.zjr.music.entity;
 public class Singer {
     private String name;
     private String sex;
-    private String introduce;
+    private String introduction;
     private String area;
     private Integer dynamic_state;
     private Integer attention;
     private Integer fan;
     private String avatar;
+    private Integer id;
 
     public String getName() {
         return name;
@@ -26,12 +27,12 @@ public class Singer {
         this.sex = sex;
     }
 
-    public String getIntroduce() {
-        return introduce;
+    public String getIntroduction() {
+        return introduction;
     }
 
-    public void setIntroduce(String introduce) {
-        this.introduce = introduce;
+    public void setIntroduction(String introduction) {
+        this.introduction = introduction;
     }
 
     public String getArea() {
@@ -72,5 +73,13 @@ public class Singer {
 
     public void setAvatar(String avatar) {
         this.avatar = avatar;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 }
