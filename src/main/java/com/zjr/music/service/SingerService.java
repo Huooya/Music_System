@@ -122,6 +122,16 @@ public class SingerService {
 
     }
 
+    /**
+     * 查询歌手
+     * @param name 歌手姓名
+     * @return List<Singer>
+     */
+    public Result selectSinger(String name){
+        List<Singer> singerList = singerMapper.selectSinger(name);
+        return Result.success(singerList);
+    }
+
 
 
 

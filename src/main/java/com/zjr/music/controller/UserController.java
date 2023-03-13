@@ -40,4 +40,10 @@ public class UserController {
     public Result deleteAttention(@ApiParam(value = "用户id") Integer userid, @ApiParam(value = "被关注用户id") Integer attentionid){
         return userService.deleteAttention(userid, attentionid);
     }
+
+    @PostMapping("/selectUser")
+    @ApiOperation(value = "查找用户")
+    public Result selectUser(@ApiParam(value = "用户姓名") String name){
+        return userService.selectUser(name);
+    }
 }

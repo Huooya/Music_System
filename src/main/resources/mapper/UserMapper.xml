@@ -6,6 +6,7 @@
     <select id="attentionIdList" resultType="Integer">
         select attentionid from attention where userid = #{userid}
     </select>
+
     <select id="getUserInfo" resultType="com.zjr.music.entity.User">
         select * from user where id = #{userid}
     </select>
@@ -21,5 +22,9 @@
     <update id="updateUserAttention"  parameterType="Integer">
         update user set attention=attention+1 where id=#{attentionid}
     </update>
+
+    <select id="selectUser" resultType="com.zjr.music.entity.User">
+        select * from user where username like '%${name}%'
+    </select>
 
 </mapper>

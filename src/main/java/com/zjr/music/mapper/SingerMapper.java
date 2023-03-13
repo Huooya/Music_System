@@ -17,4 +17,5 @@ public interface SingerMapper {
     void insertSinger(Singer singer);
     void updateSingerManAttention(Integer attentionid);
     void updateSingerAttention (Integer attentionid);
+    List<Singer> selectSinger(String name);
 }

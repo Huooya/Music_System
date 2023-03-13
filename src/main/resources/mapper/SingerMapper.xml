@@ -63,5 +63,9 @@
         update singer set fan=fan+1 where userid=#{attentionid}
     </update>
 
+    <select id="selectSinger" parameterType="String" resultType="com.zjr.music.entity.Singer">
+        select * from singer where name like '%${name}%'
+    </select>
+
 
 </mapper>

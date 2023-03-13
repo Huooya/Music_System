@@ -14,4 +14,5 @@ public interface UserMapper {
     void insertAttention(Integer userid, Integer attentionid);
     void deleteAttention(Integer userid, Integer attentionid);
     void updateUserAttention(Integer attentionid);
+    List<User> selectUser(String name);
 }

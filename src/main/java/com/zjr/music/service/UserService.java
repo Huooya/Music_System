@@ -74,4 +74,14 @@ public class UserService {
         return Result.success();
     }
 
+    /**
+     * 查找用户
+     * @param name 用户姓名
+     * @return List<User>
+     */
+    public Result selectUser(String name){
+        List<User> userList = userMapper.selectUser(name);
+        return Result.success(userList);
+    }
+
 }

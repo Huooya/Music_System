@@ -65,6 +65,12 @@ public class SingerController {
         return singerService.newSingerInfo(user);
     }
 
+    @PostMapping("/selectSinger")
+    @ApiOperation(value = "查找歌手")
+    public Result selectSinger(@ApiParam(value = "歌手姓名") String name){
+        return singerService.selectSinger(name);
+    }
+
 
 
 
