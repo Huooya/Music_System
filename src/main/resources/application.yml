@@ -1,4 +1,6 @@
 spring:
+  profiles:
+    active: "dev"
   datasource:
     username: root
     password: 123456
@@ -11,9 +13,13 @@ spring:
           db-type: h2
           log-slow-sql: true
           slow-sql-millis: 2000
-wechat:
-  open-app-id: wx6ad144e54af67d87
-  open-app-secret: 91a2ff6d38a2bbccfb7e9f9079108e2e
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+      config:
+        server-addr: 127.0.0.1:8848
+        file-extension: yaml
 
 
 #logging:
