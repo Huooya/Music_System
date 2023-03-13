@@ -46,6 +46,25 @@
 			<scope>test</scope>
 		</dependency>
 
+		<!--Nacos配置-->
+		<dependency>
+			<groupId>com.alibaba.cloud</groupId>
+			<artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+			<version>2021.1</version>
+		</dependency>
+		<!--Nacos注册中心-->
+		<dependency>
+			<groupId>com.alibaba.cloud</groupId>
+			<artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+			<version>2021.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.alibaba.nacos</groupId>
+			<artifactId>nacos-client</artifactId>
+			<version>1.1.0</version>
+		</dependency>
+
 		<dependency>
 			<groupId>org.mybatis.spring.boot</groupId>
 			<artifactId>mybatis-spring-boot-starter</artifactId>
