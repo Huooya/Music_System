@@ -2,6 +2,7 @@ package com.zjr.music.controller;
 
 import com.zjr.music.entity.Singer;
 import com.zjr.music.entity.User;
+import com.zjr.music.service.FeignTest;
 import com.zjr.music.service.SingerService;
 import com.zjr.music.service.serviceImpl.SingerServiceImpl;
 import com.zjr.music.utils.Result;
@@ -18,6 +19,9 @@ public class SingerController {
 
     @Autowired
     private SingerService singerService;
+
+    @Autowired
+    private FeignTest feignTest;
 
     @PostMapping("/all")
     @ApiOperation(value = "所有歌手信息")
@@ -67,7 +71,10 @@ public class SingerController {
         return singerService.selectSinger(name);
     }
 
-
+    @GetMapping("/testFeign")
+    public String testFeign(){
+        return feignTest.task();
+    }
 
 
 }
