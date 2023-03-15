@@ -2,6 +2,7 @@ package com.zjr.music.controller;
 
 import com.zjr.music.entity.Singer;
 import com.zjr.music.entity.User;
+import com.zjr.music.service.FeignPython;
 import com.zjr.music.service.FeignTest;
 import com.zjr.music.service.SingerService;
 import com.zjr.music.service.serviceImpl.SingerServiceImpl;
@@ -22,6 +23,9 @@ public class SingerController {
 
     @Autowired
     private FeignTest feignTest;
+
+    @Autowired
+    private FeignPython feignPython;
 
     @PostMapping("/all")
     @ApiOperation(value = "所有歌手信息")
@@ -74,6 +78,11 @@ public class SingerController {
     @GetMapping("/testFeign")
     public String testFeign(){
         return feignTest.task();
+    }
+
+    @GetMapping("/pythonFeign")
+    public String pythonFeign(){
+        return feignPython.pythonHello();
     }
 
 
